@@ -6,9 +6,9 @@ The install script links files into your shell by adding a source link at the bo
 
 ### Scripted linking
 
-- aliases-distrobox
-- aliases-git
-- aliases-ros
+- [aliases-distrobox](aliases-distrobox)
+- [aliases-git](aliases-git)
+- [aliases-ros](aliases-ros)
 
 ### Supported shells
 
