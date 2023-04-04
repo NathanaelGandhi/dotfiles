@@ -1,0 +1,28 @@
+# see https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+---
+BasedOnStyle: Google
+Language: Cpp
+Standard: Cpp17
+# Language: C
+# Standard: C99
+
+IndentWidth: 4
+UseTab: Never
+# ColumnLimit: 120
+
+# AccessModifierOffset: -4
+AlignAfterOpenBracket: BAS_AlwaysBreak
+AlignOperands: BreakBeforeBinaryOperators
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLambdasOnASingleLine: Empty
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: false
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+BreakConstructorInitializers: BeforeComma
+# IndentPPDirectives: AfterHash
