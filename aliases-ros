@@ -1,0 +1,2 @@
+alias src-noetic="source /opt/ros/noetic/setup.bash && rcs-noetic-1"
+alias rcs-noetic-1="source /home/n/ros/catkin_ws/devel/setup.zsh"
