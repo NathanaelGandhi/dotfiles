@@ -26,7 +26,7 @@ pickShell () {
 pickFiles () {
     config_file=".${1}rc"  # create config file name based on selected shell
     PS3='Please enter your choice: '
-    options=("aliases-distrobox" "aliases-git" "aliases-ros" "Quit")
+    options=("aliases-distrobox" "aliases-git" "aliases-ros" "config-zsh" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -38,6 +38,9 @@ pickFiles () {
                 ;;
             "aliases-ros")
                 checkAndAction $opt $config_file
+                ;;
+            "config-zsh")
+                bash config-zsh.sh
                 ;;
             "Quit")
                 break
