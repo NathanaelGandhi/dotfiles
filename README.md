@@ -14,6 +14,10 @@ The [install script](install.sh) links files into your shell by adding a source 
 - [install-apts.sh](install-apts.sh)
 - [install-snaps.sh](install-snaps.sh)
 - [install-flatpaks.sh](install-flatpaks.sh)
+- INSTALL-ALL
+  - apts
+  - snaps
+  - flatpaks
 
 ### Supported shells
 
