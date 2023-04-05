@@ -1,2 +1,5 @@
+## ROS NOETIC ALIASES
 alias src-noetic="source /opt/ros/noetic/setup.bash && rcs-noetic-1"
-alias rcs-noetic-1="source /home/n/ros/catkin_ws/devel/setup.zsh"
+alias rcs-noetic-1="source /home/n/ros/catkin_noetic/devel/setup.zsh"
+
+## note: this may get moved to envrc sometime

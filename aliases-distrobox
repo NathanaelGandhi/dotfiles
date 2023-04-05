@@ -1,6 +1,6 @@
+## DISTROBOX ALIASES
 alias dbe="distrobox enter"
 alias dbs="distrobox stop -Y"
 alias dbl="distrobox list"
 alias dbrm="distrobox rm"
 alias dbc="distrobox create"
-
