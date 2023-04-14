@@ -3,10 +3,11 @@
 
 ## ADD TO CONTAINERS REGISTRY
 echo "[config-containers] adding docker.io to containers registry"
-if grep -q "unqualified-search-registries=["docker.io"]" /etc/containers/registries.conf; then
+if grep -Fxq 'unqualified-search-registries=["docker.io"]' /etc/containers/registries.conf
+then
     echo "already exists"
 else
-    echo 'unqualified-search-registries=["docker.io"]' >> /etc/containers/registries.conf
+    echo 'unqualified-search-registries=["docker.io"]' | sudo tee -a /etc/containers/registries.conf
 fi
 
 ## COMPLETE
