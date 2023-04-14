@@ -7,7 +7,7 @@ sudo apt update && sudo apt upgrade -y
 
 ## INSTALL APTS
 echo "[install-apts] installing apts"
-sudo apt install -y terminator zsh fonts-powerline flatpak gnome-software-plugin-flatpak cpu-x photocollage neofetch git podman distrobox clang-format
+sudo apt install -y terminator zsh fonts-powerline flatpak gnome-software-plugin-flatpak cpu-x photocollage neofetch git podman distrobox clang-format direnv
 
 ## COMPLETE
 echo "[install-apts]"
