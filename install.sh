@@ -26,7 +26,7 @@ pickShell () {
 pickFiles () {
     config_file=".${1}rc"  # create config file name based on selected shell
     PS3='Please enter your choice: '
-    options=("aliases-distrobox" "aliases-git" "aliases-ros" "config-zsh" "config-containers" "install-apts" "install-snaps" "install-flatpaks" "Quit")
+    options=("aliases-distrobox" "aliases-git" "aliases-ros" "config-zsh" "config-containers" "install-apts" "install-snaps" "install-flatpaks" "INSTALL-ALL" "NG" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -58,6 +58,15 @@ pickFiles () {
                 bash install-apts.sh
                 bash install-snaps.sh
                 bash install-flatpaks.sh
+                ;;
+            "NG")
+                bash install-apts.sh
+                bash install-snaps.sh
+                bash install-flatpaks.sh
+                bash config-zsh.sh
+                bash config-containers.sh
+                checkAndAction aliases-distrobox $config_file
+                checkAndAction aliases-git $config_file
                 ;;
             "Quit")
                 break
