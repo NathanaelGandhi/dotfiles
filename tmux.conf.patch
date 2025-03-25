@@ -1,0 +1,69 @@
+--- /dev/null	2025-03-25 19:17:30.550509892 +1100
++++ .tmux.conf	2025-03-25 20:38:35.321108124 +1100
+@@ -0,0 +1,66 @@
++# remap prefix from 'C-b' to 'C-Space'
++#unbind C-b
++#unbind C-Space
++#set-option -g prefix C-Space
++#bind-key C-Space send-prefix
++
++# split panes using | and -
++bind \\ split-window -h -c "#{pane_current_path}"
++bind - split-window -v -c "#{pane_current_path}"
++unbind '"'
++unbind %
++
++setw -g automatic-rename on   # rename window to reflect current program
++set -g renumber-windows on    # renumber windows when a window is closed
++
++# reload config file (change file location to your the tmux.conf you want to use)
++unbind r
++bind r source-file ~/.tmux.conf
++
++# Enable mouse mode (tmux 2.1 and above)
++set -g mouse on
++
++# set first window to index 1 (not 0) to map more to the keyboard layout
++set -g base-index 1
++set -g pane-base-index 1
++
++# increase time between timeout for needing to send prefix again
++set -g repeat-time 1000
++
++# Copy behaviour configuration
++set-window-option -g mode-keys vi
++unbind p
++bind p paste-buffer
++unbind -T copy-mode-vi Space; #Default for begin-selection
++unbind -T copy-mode-vi Enter; #Default for copy-selection
++bind -T copy-mode-vi v send-keys -X begin-selection
++bind -T copy-mode-vi y send-keys -X copy-selection
++bind -T copy-mode-vi r send-keys -X rectangle-toggle
++bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -sel clip -i'
++bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'xclip -sel clip -i'
++
++set-option -g history-limit 50000
++
++# Visual notification of activity in other windows
++set-window-option -g monitor-activity on
++set-option -g visual-activity on
++
++# simple movement between terminals with home row keys
++unbind l
++bind -r h select-pane -L
++bind -r j select-pane -D
++bind -r k select-pane -U
++bind -r l select-pane -R
++
++# Resize panes using PREFIX H, J, K, L
++bind -r H resize-pane -L
++bind -r J resize-pane -D
++bind -r K resize-pane -U
++bind -r L resize-pane -R
++
++set -g default-terminal "screen-256color"
++
++# # make colors inside tmux look the same as outside of tmux
++# # see https://github.com/tmux/tmux/issues/696
++# # see https://stackoverflow.com/a/41786092
++set-option -ga terminal-overrides ",xterm-256color:Tc"
